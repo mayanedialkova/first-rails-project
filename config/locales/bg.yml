@@ -1,0 +1,55 @@
+﻿# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+bg:
+  activerecord:
+    models:
+      training: Тренировка
+      training_part: Част от тренировка
+      activity: Дейност
+      Activity: Дейност
+    attributes:
+      training:
+        about: 'Относно'
+        date: 'Дата'
+      activity: 
+        name: 'Име'
+        units: 'Мерни единици'
+      training_part:
+        name: Име
+    errors:
+      template:
+        header:
+          one:    "%{model}: запазването е неуспешно заради %{count} грешка"
+          other:  "%{model}: запазването е неуспешно заради %{count} грешки"
+        body: "Имаше проблем със следните полета:"
+  errors:
+    messages:
+      blank: e задължително поле
+      confirmation: не съвпада
+      taken: e заето
+      not_a_number: трябва да е число
+      new: нов(а)
+  month_names:
+    - януари
+    - февруари
+    - март
+    - април
+    - май
+    - юни
+    - юли
+    - август
+    - септември
+    - октомври
+    - ноември
+    - декември
+  helpers:
+    submit:
+      create: Създай %{model}
+      submit: Запази %{model}
+      update: Обнови %{model}
+  support:
+    array:
+      last_word_connector: ! ' и '
+      two_words_connector: ! ' и '
+      words_connector: ! ', '

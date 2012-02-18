@@ -1,0 +1,1 @@
+require 'spec_helper'describe TrainingPart do  it "can be instantiated" do    TrainingPart.new.should be_an_instance_of(TrainingPart)  end  it "can be saved successfully" do    TrainingPart.create.should be_persisted  endend

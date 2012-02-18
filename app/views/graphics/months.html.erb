@@ -1,0 +1,18 @@
+<h1>Listing trainings by months</h1>
+
+<div>
+<% @activities.each do |a| %>
+  <br />
+ 
+  <% unless a.data_per_months.max.eql? 0 %>
+    <% GoogleChart::BarChart.new('800x300', a.name_and_units, :vertical, true) do |bc|
+      bc.data "", a.data_per_months, 'c53711'
+      bc.axis :x, :labels => a.last_months, :font_size => 10
+      bc.axis :y, :range => [0, a.data_per_months.max]
+      bc.width_spacing_options :bar_width => 55, :bar_spacing => 10 %>
+      
+      <img src="<%= bc.to_url %>"/> 
+    <% end %>
+  <% end %>  
+<% end %>
+</div>

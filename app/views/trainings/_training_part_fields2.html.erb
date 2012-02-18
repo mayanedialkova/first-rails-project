@@ -1,0 +1,6 @@
+<div class="part">
+  <%= f.label :activity, :Activity %>
+  <%= f.collection_select :activity_id, Activity.all, :id, :name_and_units %>
+  <%= f.text_field :amount %> 
+  <%-#= f.label :amount, training_part.activity_id %>
+</div>

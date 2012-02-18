@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  training_id: 1
+  activity_id: 1
+  amount: 12
+
+two:
+  training_id: 1
+  activity_id: 2
+  amount: 20

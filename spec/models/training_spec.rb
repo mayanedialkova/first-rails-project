@@ -1,0 +1,1 @@
+require 'spec_helper'describe Training do  it "can be instantiated" do    Training.new.should be_an_instance_of(Training)  end    it "accepts nested attributes for training_parts" do    training = Training.new    training_part = TrainingPart.new    training_part.id = training.id  endend

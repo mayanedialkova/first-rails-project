@@ -1,0 +1,37 @@
+<%= form_for @training do |f| %>
+  <% if @training.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training.errors.count, "error") %> prohibited this training from being saved:</h2>
+
+      <ul>
+      <% @training.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <% month = ["January","February","March","April","May","June","July","August","September","October","November","December"] %>
+  
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= datetime_select :training, :date, {:order => [:day, :month, :year], :use_month_names => month } %>
+  </div>  
+  
+  <%= f.fields_for :training_parts do |builder| %>
+    <% render :partial => 'training_part_fields', :locals => {:f => builder} %> 
+  <% end %>
+  <br />
+  <%= link_to_add_fields "Add Part", f, :training_parts %>
+    
+  <div class="field">
+    <%= f.label :about %><br />
+    <%= f.text_area :about, :cols =>50, :rows => 5 %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+

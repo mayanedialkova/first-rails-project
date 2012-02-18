@@ -1,0 +1,11 @@
+﻿# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Тичане
+  units: км
+  integer: 1
+
+two:
+  name: скачане на въже
+  units: мин
+  integer: 2

@@ -1,0 +1,27 @@
+<h1>Listing training_parts</h1>
+
+<table>
+  <tr>
+    <th>Training</th>
+    <th>Activity</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @training_parts.each do |training_part| %>
+  <tr>
+    <td><%= training_part.training_id %></td>
+    <%-#= training_part.activity.name %>
+    <%-#= training_part.amount %>  <%-#= training_part.activity.units %>
+    <%-#= link_to 'Show', training_part %>
+    <td><%= link_to 'Edit', edit_training_part_path(training_part) %></td>
+    <td><%= link_to 'Destroy', training_part, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Training part', new_training_part_path %>

@@ -1,0 +1,15 @@
+<h1>Listing trainings by days</h1>
+
+<div>
+<% @activities.each do |a| %>
+  <% unless a.data_per_days.max.eql? 0 %>
+    <% GoogleChart::BarChart.new('800x200', a.name_and_units, :vertical, false) do |bc|
+      bc.data "", a.data_per_days, '006633' 
+      bc.axis :y, :range => [0, a.data_per_days.max]
+      bc.axis :x, :labels => a.last_days, :font_size => 10
+      bc.width_spacing_options :bar_width => 15, :bar_spacing => 5 %>
+      <img src="<%= bc.to_url %>"/> 
+    <% end %>
+  <% end %>
+<% end %>
+</div>

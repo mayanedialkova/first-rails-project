@@ -1,0 +1,32 @@
+<%= form_for(@training_part) do |f| %>
+  <% if @training_part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@training_part.errors.count, "error") %> prohibited this training_part from being saved:</h2>
+
+      <ul>
+      <% @training_part.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div>
+  <%= f.label :activity %>
+
+  <select name="training_part[activity_id]">
+   <% @activities.each do |activity| %>
+       <option value="<%= activity.id %>" 
+         <%= ' selected' if activity.id == @training_part.activity_id %>>
+         <%= activity.name %> (<%= activity.units %>)
+       </option>
+   <% end %>
+  </select>
+
+    <%= f.label :amount %>
+    <%= f.number_field :amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
